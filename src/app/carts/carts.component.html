@@ -1,0 +1,22 @@
+<div class="alert alert-success">
+    <div class="row">
+        <div class="col-sm-12 alert alert-success" *ngFor="let cart of Cart">
+            <div class="form-group">
+                <p>Bouquet ID:{{cart.ID}}</p>
+            </div>
+            <div class="form-group">
+                <p>Bouquet Name:{{cart.Name}}</p>
+            </div>
+            <div class="form-group">
+                <p>Bouquet Price:{{cart.Price}}</p>
+            </div>
+            <div class="form-group">
+                <p>Bouquet Quantity:{{cart.qty}}</p>
+            </div>
+
+
+            <!--  <div class="form-group"><button class="btn btn-success" type="button" (click)="RemoveCarts(cart.ID)">Remove</button></div> -->
+        </div>
+    </div>
+    <h3 *ngIf="Cart.length>0"> Grand Total : {{service.SetTotal()}}</h3>
+</div>

@@ -1,0 +1,70 @@
+<!-- <div class="alert alert-success">
+    <h4>Welcome to flowers shopping</h4>
+    <div class="form-group">
+        <label>Bouquet ID</label>
+        <input type="number" class="form-control" [(ngModel)]="flowers.ID">
+    </div>
+    <div class="form-group">
+        <label>Bouquet Name</label>
+        <input type="text" class="form-control" [(ngModel)]="flowers.Name">
+    </div>
+
+    <div class="form-group">
+        <label>Bouquet Price</label>
+        <input type="number" class="form-control" [(ngModel)]="flowers.Price">
+    </div>
+    <div class="form-group">
+        <label>Bouquet Quantity</label>
+        <input type="number" class="form-control" [(ngModel)]="flowers.qty">
+    </div>
+    <div>
+        <button class="btn btn-success" data-toggle="modal" data-target="#myModal" (click)="PutFlowers()">Add Bouquet</button>
+        <button class="btn btn-danger">Reset</button>
+    </div>
+
+    <p class="alert alert-danger" [id]="style"> Bouquet ID already Exists</p>
+    <div> -->
+
+<div class="alert alert-success">
+    <form [formGroup]="myForm" (ngSubmit)="PutFlowers()">
+        <h4>Welcome to flowers shopping</h4>
+        <div class="form-group">
+            <label>Bouquet ID</label>
+            <input type="number" class="form-control" [(ngModel)]="flowers.ID" [formControl]="uid">
+            <span *ngIf="uid.valid==false && uid.touched" class="alert alert-danger">
+                Id cannot be empty
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Bouquet Name</label>
+            <input type="text" class="form-control" [(ngModel)]="flowers.Name" [formControl]="uname">
+            <span *ngIf="uid.valid==false && uid.touched" class="alert alert-danger">
+                Name cannot be empty
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Bouquet Price</label>
+            <input type="number" class="form-control" [(ngModel)]="flowers.Price" [formControl]="uprice">
+
+            <span *ngIf="uprice.valid==false && uprice.touched" class="alert alert-danger">
+                Price cannot be empty
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Bouquet Quantity</label>
+            <input type="number" class="form-control" [(ngModel)]="flowers.qty" [formControl]="uquantity">
+
+            <span *ngIf="uquantity.valid==false && uquantity.touched" class="alert alert-danger">
+                Quantity cannot be empty
+            </span>
+        </div>
+        <div>
+            <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Add Bouquet</button>
+            <button class="btn btn-danger">Reset</button>
+        </div>
+
+        <p class="alert alert-danger" [id]="style"> Bouquet ID already Exists</p>
+    </form>
+
+    <div>

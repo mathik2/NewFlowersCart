@@ -1,0 +1,17 @@
+<div class="alert alert-success">
+    <div class="row">
+        <div class="col-sm-12 alert alert-success" *ngFor="let flower of flowers">
+            <div class="form-group">
+                <p>Bouquet ID:{{flower.ID}}</p>
+            </div>
+            <div class="form-group">
+                <p>Bouquet Name:{{flower.Name}}</p>
+            </div>
+            <div class="form-group">
+                <p>Bouquet Price:{{flower.Price}}</p>
+            </div>
+            <div class="form-group">
+                <p>Bouquet Quantity:{{flower.qty}}</p>
+            </div>
+            <div class="form-group"><button class="btn btn-info" type="button" (click)="Cart(flower.ID)">Buy</button></div>
+        </div>
